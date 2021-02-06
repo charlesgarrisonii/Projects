@@ -43,8 +43,6 @@ moxaTermServer['port'] = str(port)
 def noIos():
     moxa = netmiko.ConnectHandler(**moxaTermServer)
     print(moxa.find_prompt())
-    output = moxa.write_channel(boot_cmd +'\n')
-    print(output)
     print('[Status]: No CISCO IOS Image detected...')
     moxa.write_channel(set_cmd[0])
     print(moxa.find_prompt())
